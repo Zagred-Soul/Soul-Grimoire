@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>animation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: rgb(27, 133, 135);
+
+        flex-direction: column;
+      }
+
+      .example {
+        display: flex;
+        height: 200px;
+        width: 200px;
+        background: rgb(148, 68, 68);
+        position: relative;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 1000px rgba(255, 0, 0, 1);
+        animation: heart 2s linear infinite;
+        margin-bottom: 200px;
+      }
+
+      @keyframes heart {
+        0% {
+          transform: rotate(-45deg) scale(1.07);
+        }
+
+        100% {
+          transform: rotate(-45deg) scale(1);
+        }
+      }
+
+      .example::before {
+        content: "";
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background: rgb(148, 68, 68);
+        top: -50%;
+        border-radius: 100px;
+      }
+
+      .example::after {
+        content: "";
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background: rgb(148, 68, 68);
+        right: -50%;
+        border-radius: 100px;
+      }
+
+      .Celebration-text {
+        z-index: 200;
+        position: relative;
+        bottom: -200px;
+        transform: rotate(45deg);
+      }
+
+      .Celebration-text h1 {
+        position: relative;
+        color: rgb(121, 40, 40);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: typing 2s steps(3) infinite;
+        overflow: hidden;
+      }
+
+      @keyframes typing {
+        0% {
+          width: 0px;
+        }
+        10% {
+          width: 400px;
+          bottom: -200px;
+          right: -50px;
+        }
+
+        95% {
+          width: 400px;
+          bottom: -200px;
+          right: -50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example" id="Heart">
+      <div class="Celebration-text">
+        <h1>HappyMother'sDay</h1>
+      </div>
+    </div>
+    <div>
+      <h2>Thank you for Everythig you've done for me.</h2>
+    </div>
+  </body>
+</html>
